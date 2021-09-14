@@ -1,44 +1,40 @@
 public class Animals {
 
     // Attributes
-    private String kind;
-    private int x;
-    private int y;
+    private String species;
+    private int[] position;
 
     // Constructor
-    public Animals(String kind, int x, int y) {
-        this.kind = kind;
-        this.x = x;
-        this.y = y;
+    public Animals(String newSpecies, int x, int y) {
+        species = newSpecies;
+        position[0] = x;
+        position[1] = y;
     }
 
     // Methods
-    public void up() {
-        this.y = y + 1;
-        System.out.println("I am the " + this.kind + ", I am now standing on square " + this.x + ", " + this.y);
+
+    // Move method - modify animal's position
+    public void move(String direction) {
+        if (direction == "left") {
+            position[0] = position[0] - 1;
+        } else if (direction == "right") {
+            position[0] = position[0] + 1;
+        } else if (direction == "up") {
+            position[1] = position[1] - 1;
+        } else if (direction == "down") {
+            position[1] = position[1] + 1;
+        } else {
+            System.out.println("incorrect parameter in the move method");
+        }
     }
 
-    public void down() {
-        this.y = y - 1;
-        System.out.println("I am the " + this.kind + ", I am now standing on square " + this.x + ", " + this.y);
+    // Getters
+    public int[] getPosition() {
+        return position;
     }
 
-    public void left() {
-        this.x = x - 1;
-        System.out.println("I am the " + this.kind + ", I am now standing on square " + this.x + ", " + this.y);
-    }
-
-    public void right() {
-        this.x = x + 1;
-        System.out.println("I am the " + this.kind + ", I am now standing on square " + this.x + ", " + this.y);
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
+    public String getSpecies() {
+        return species;
     }
 
 }
