@@ -7,12 +7,11 @@ public class Main {
         Animals prey = new Animals("Rabbit", -1, 1);
 
         // Playing loop
-        for (int i = 0; i >= 5; i++) {
+        for (int i = 0; i <= 5; i++) {
+            System.out.println("\n");
             predator.move(randomMove());
             prey.move(randomMove());
-            System.out.println(
-                    "I am the " + predator.getSpecies() + ", I am standing on square " + predator.getPosition());
-            System.out.println("I am the " + prey.getSpecies() + ", I am standing on square " + prey.getPosition());
+
         }
 
     }

@@ -2,7 +2,7 @@ public class Animals {
 
     // Attributes
     private String species;
-    private int[] position;
+    private int[] position = { 0, 0 };
 
     // Constructor
     public Animals(String newSpecies, int x, int y) {
@@ -26,11 +26,12 @@ public class Animals {
         } else {
             System.out.println("incorrect parameter in the move method");
         }
+        System.out.println("I am the " + species + ", I am standing on square " + position[0] + ", " + position[1]);
     }
 
     // Getters
-    public int[] getPosition() {
-        return position;
+    public String getPosition() {
+        return position[0] + ", " + position[1];
     }
 
     public String getSpecies() {
