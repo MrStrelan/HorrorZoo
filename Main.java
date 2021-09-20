@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args) {
 
         // creating objects
-        Animals predator = new Animals("Snake", 0, 3);
+        Animals predator = new Animals("Snake", 2, 3);
         Animals prey = new Animals("Rabbit", -1, 1);
 
         // Playing loop
@@ -11,6 +11,13 @@ public class Main {
             System.out.println("\n");
             predator.move(randomMove());
             prey.move(randomMove());
+
+            if (Math.abs(predator.getPosition()[0] - prey.getPosition()[0]) == 1
+                    || Math.abs(predator.getPosition()[1] - prey.getPosition()[1]) == 1) {
+                prey.beg();
+                predator.attack();
+                break;
+            }
 
         }
 

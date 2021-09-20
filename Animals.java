@@ -29,9 +29,19 @@ public class Animals {
         System.out.println("I am the " + species + ", I am standing on square " + position[0] + ", " + position[1]);
     }
 
+    // Attack method (only for snake)
+    public void attack() {
+        System.out.println("Omn omn omn I'm eating you wahahahahahaa!!!");
+    }
+
+    // Begging method (only for rabbit)
+    public void beg() {
+        System.out.println("Nooooo Please don't eat me!!!");
+    }
+
     // Getters
-    public String getPosition() {
-        return position[0] + ", " + position[1];
+    public int[] getPosition() {
+        return position;
     }
 
     public String getSpecies() {
