@@ -1,1 +1,0 @@
-The game prototype could be used for practices for coding, as simple demo game or as prototype for bigger game.
