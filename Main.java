@@ -12,8 +12,10 @@ public class Main {
             predator.move(randomMove());
             prey.move(randomMove());
 
-            if (Math.abs(predator.getPosition()[0] - prey.getPosition()[0]) == 1
-                    || Math.abs(predator.getPosition()[1] - prey.getPosition()[1]) == 1) {
+            if ((Math.abs(predator.getPosition()[0] - prey.getPosition()[0]) == 1
+                    && Math.abs(predator.getPosition()[1] - prey.getPosition()[1]) == 0)
+                    || (Math.abs(predator.getPosition()[0] - prey.getPosition()[0]) == 0
+                            && Math.abs(predator.getPosition()[1] - prey.getPosition()[1]) == 1)) {
                 prey.beg();
                 predator.attack(prey.getPosition());
                 break;
