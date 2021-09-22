@@ -15,7 +15,7 @@ public class Main {
             if (Math.abs(predator.getPosition()[0] - prey.getPosition()[0]) == 1
                     || Math.abs(predator.getPosition()[1] - prey.getPosition()[1]) == 1) {
                 prey.beg();
-                predator.attack();
+                predator.attack(prey.getPosition());
                 break;
             }
 

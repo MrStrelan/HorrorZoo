@@ -30,7 +30,9 @@ public class Animals {
     }
 
     // Attack method (only for snake)
-    public void attack() {
+    public void attack(int[] preyPosition) {
+        position = preyPosition;
+        System.out.println("I am the " + species + ", I am standing on square " + position[0] + ", " + position[1]);
         System.out.println("Omn omn omn I'm eating you wahahahahahaa!!!");
     }
 
