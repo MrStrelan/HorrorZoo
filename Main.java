@@ -17,10 +17,14 @@ public class Main {
                     || (Math.abs(predator.getPosition()[0] - prey.getPosition()[0]) == 0
                             && Math.abs(predator.getPosition()[1] - prey.getPosition()[1]) == 1)) {
                 prey.beg();
-                predator.attack(prey.getPosition());
+                predator.attack(prey.getPosition(), prey);
                 break;
             }
 
+        }
+
+        if (prey.getAlive() == true) {
+            System.out.println("\n" + prey.getSpecies() + " ran away");
         }
 
     }

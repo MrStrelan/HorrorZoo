@@ -2,6 +2,7 @@ public class Animals {
 
     // Attributes
     private String species;
+    private boolean alive = true;
     private int[] position = { 0, 0 };
 
     // Constructor
@@ -30,10 +31,11 @@ public class Animals {
     }
 
     // Attack method (only for snake)
-    public void attack(int[] preyPosition) {
+    public void attack(int[] preyPosition, Animals prey) {
         position = preyPosition;
         System.out.println("I am the " + species + ", I am standing on square " + position[0] + ", " + position[1]);
         System.out.println("Omn omn omn I'm eating you wahahahahahaa!!!");
+        prey.die();
     }
 
     // Begging method (only for rabbit)
@@ -41,9 +43,18 @@ public class Animals {
         System.out.println("Nooooo Please don't eat me!!!");
     }
 
+    // Dying method
+    public void die() {
+        alive = false;
+    }
+
     // Getters
     public int[] getPosition() {
         return position;
+    }
+
+    public boolean getAlive() {
+        return alive;
     }
 
     public String getSpecies() {
